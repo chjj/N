@@ -1,0 +1,7 @@
+{
+  "name": "$N",
+  "description": "simple flow control",
+  "author": "Christopher Jeffrey",
+  "version": "0.1",
+  "main": "./N.js"
+}
