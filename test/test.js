@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var $N = require('../N');
+var $N = require('../');
 
 $N(function(next) {
   fs.readFile('./log.txt', 'utf-8', next);
@@ -11,14 +11,21 @@ $N(function(next) {
   } else { 
     console.log('Some text: ' + txt);
   }
-  next.N(function(next) { // you can even push more functions onto the stack!
-    console.log('world');
-    next();
-  }, function() { // you can pass multiple args if you want to use it like Step
-    console.log('how are you?');
-  })('hello'); // the same thing as calling next() when inside a stack, the .N() func returns "next"
+  next.N(
+    // you can even push 
+    // more functions onto the stack!
+    function(next) { 
+      console.log('world');
+      next();
+    }, 
+    // you can pass multiple args if 
+    // you want to use it like Step
+    function() { 
+      console.log('how are you?');
+    }
+  )('hello');
 })
 .N(function(next, hello) {
   console.log(hello);
   next();
-})(); // execute the chain
+})(); 
