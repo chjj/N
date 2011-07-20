@@ -1,7 +1,7 @@
 {
-  "name": "N",
-  "description": "next flow",
+  "name": "$N",
+  "description": "async control flow",
   "author": "Christopher Jeffrey",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/N.js"
 }
